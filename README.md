@@ -8,8 +8,8 @@
 ## Структура
 
 ```
-index.html            — весь текст портфолио
-assets/style.css      — оформление (повторяет документ Weeek)
+index.html            — весь текст портфолио (единственный источник контента)
+assets/style.css      — оформление: коралловый hero, лаймовые акценты, карточки проектов
 assets/cover.jpg      — обложка 1440px (десктоп / retina)
 assets/cover-720.jpg  — обложка 720px (телефоны)
 assets/apple-touch-icon.png, favicon.svg — иконки
@@ -19,17 +19,19 @@ assets/apple-touch-icon.png, favicon.svg — иконки
 ## Как редактировать
 
 1. Откройте папку в VS Code: `code ~/Projects/DmitriiTes.github.io`
-2. Правьте `index.html`. Каждый проект — блок такого вида:
+2. Правьте `index.html`. Каждый проект — отдельная карточка внутри `<main class="projects">`:
 
    ```html
-   <hr>
-   <h3 id="nazvanie-proekta">🔹 Название проекта</h3>
-   <p><b>Описание:</b> Текст.<br><b>Роль: </b>Роль.<br><b>Ссылка:</b> <a href="https://..." target="_blank" rel="noopener noreferrer">Сайт</a></p>
+   <section class="project" id="nazvanie-proekta">
+     <h3>Название проекта</h3>
+     <p><b>Описание:</b> Текст.<br><b>Роль:</b> Роль.<br><b>Ссылки:</b> <a href="https://..." target="_blank" rel="noopener noreferrer">Сайт</a>, <a href="https://..." target="_blank" rel="noopener noreferrer">кейс</a></p>
+   </section>
    ```
 
-   - `<br>` — перенос строки внутри абзаца, `<b>` — жирный, `<hr>` — разделитель.
-   - Список ссылок: `<ul><li><p><a href="...">Текст</a></p></li></ul>`.
-   - `id` у заголовка задаёт прямую ссылку на раздел: `https://dmitriites.github.io/#nazvanie-proekta`. Пишите латиницей, без пробелов, уникально.
+   - `<br>` — перенос строки внутри абзаца, `<b>` — жирный.
+   - Список ссылок столбиком (как у ФИНУСЛУГИ): `<ul><li><p><a href="...">Текст</a></p></li></ul>`.
+   - `id` у карточки задаёт прямую ссылку: `https://dmitriites.github.io/#nazvanie-proekta`. Латиницей, без пробелов, уникально.
+   - На десктопе карточки идут в две колонки, на телефоне — в одну; порядок — как в файле.
 3. Посмотреть локально: `python3 -m http.server 8000` в папке проекта и открыть http://localhost:8000
 
 С Claude Code достаточно открыть эту папку и описать изменение словами, например: «добавь проект X после ИНГОССТРАХ с таким описанием…».
