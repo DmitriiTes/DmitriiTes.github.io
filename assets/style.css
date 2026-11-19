@@ -1,0 +1,142 @@
+/* Оформление повторяет публичную страницу документа Weeek (замеры computed styles). */
+:root {
+  --text: #202430;
+  --link: #6c78f4;
+  --line: #e5e7ee;
+  --avatar-bg: #ffc2ee;
+  --avatar-text: #f46cce;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF UI Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 0 0;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 224px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: -52px;
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 0 200px 20px;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 36px 0;
+  border-radius: 4px;
+  background: var(--avatar-bg);
+  color: var(--avatar-text);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
+  user-select: none;
+}
+
+h1, h2, h3, p { margin: 0; overflow-wrap: anywhere; }
+
+h1 {
+  padding: 7px 0;
+  margin-bottom: 14px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+h2 {
+  padding: 5px 0;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+}
+
+h3 {
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 600;
+}
+
+h2, h3 { scroll-margin-top: 16px; }
+
+p {
+  padding: 5px 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+b { font-weight: 700; }
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+hr {
+  height: 1px;
+  margin: 5px 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--line);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  padding-left: 48px;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: 30px;
+  top: 5px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+img { max-width: 100%; }
+
+@media (max-width: 750px) {
+  .page { padding: 36px 15px 0; }
+  .inner { margin-left: 0; }
+}
